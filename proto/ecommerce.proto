@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+// Define package name
+package ecommerce;
+
+// Define message for product
+message Product {
+  string id = 1;
+  string name = 2;
+  float price = 3;
+}
+
+// Define message for order item
+message OrderItem {
+  string product_id = 1;
+  int32 quantity = 2;
+  float price = 3;
+}
+
+// Define message for order
+message Order {
+  string id = 1;
+  string user_id = 2;
+  repeated OrderItem items = 3;
+  float total_price = 4;
+}
+
+// Define service for products
+service ProductService {
+  // Method to get a product by ID
+  rpc GetProductById(GetProductByIdRequest) returns (Product);
+
+  // Method to list all products
+  rpc ListProducts(ListProductsRequest) returns (stream Product);
+}
+
+// Define service for orders
+service OrderService {
+  // Method to place an order
+  rpc PlaceOrder(PlaceOrderRequest) returns (Order);
+
+  // Method to get an order by ID
+  rpc GetOrderById(GetOrderByIdRequest) returns (Order);
+}
