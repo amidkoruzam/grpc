@@ -5,5 +5,5 @@ const PROTO_PATH = __dirname + "../proto/ecommerce.proto";
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH);
 
-export const orderServiceProto =
-  grpc.loadPackageDefinition(packageDefinition).OrderService;
+export const ecommerceDescriptor =
+  grpc.loadPackageDefinition(packageDefinition);
