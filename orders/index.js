@@ -7,9 +7,10 @@ server.addService(orderServiceProto.OrderService.service, {
   getOrder,
 });
 
-server.bind(
+server.bindAsync(
   `0.0.0.0:${process.env.ORDER_SERVICE_PORT}`,
-  grpc.ServerCredentials.createInsecure()
+  grpc.ServerCredentials.createInsecure(),
+  (error) => {
+    if (error) console.error(error);
+  }
 );
-
-server.start();
