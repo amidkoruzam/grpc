@@ -1,7 +1,9 @@
-const grpc = require("@grpc/grpc-js");
-const protoLoader = require("@grpc/proto-loader");
+import grpc from "@grpc/grpc-js";
+import protoLoader from "@grpc/proto-loader";
+import { URL } from "url";
 
-const PROTO_PATH = __dirname + "../proto/ecommerce.proto";
+const PROTO_PATH =
+  new URL(".", import.meta.url).pathname + "../proto/ecommerce.proto";
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH);
 

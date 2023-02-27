@@ -1,4 +1,4 @@
-import { getProduct } from "./api";
+import { getProduct } from "./api.js";
 
 export async function getOrder(call, callback) {
   const params = call.request;
