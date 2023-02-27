@@ -25,6 +25,18 @@ message Order {
   float total_price = 4;
 }
 
+message GetProductByIdRequest {
+  uint64 id = 1;
+}
+
+message ListProductsRequest {}
+
+message PlaceOrderRequest {}
+
+message GetOrderByIdRequest {
+  uint64 id = 1;
+}
+
 // Define service for products
 service ProductService {
   // Method to get a product by ID
