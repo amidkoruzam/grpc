@@ -10,4 +10,4 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH);
 export const ecommerceDescriptor =
   grpc.loadPackageDefinition(packageDefinition);
 
-export const { Product } = ecommerceDescriptor.ecommerce;
+export const { ProductService, OrderService } = ecommerceDescriptor.ecommerce;

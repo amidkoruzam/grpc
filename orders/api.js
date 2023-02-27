@@ -1,7 +1,7 @@
 import grpc from "@grpc/grpc-js";
-import { Product } from "./grpc.js";
+import { ProductService } from "./grpc.js";
 
-const productService = new Product(
+const productService = new ProductService(
   process.env.PRODUCT_SERVICE_HOST + ":" + process.env.PRODUCT_SERVICE_PORT,
   grpc.credentials.createInsecure()
 );
